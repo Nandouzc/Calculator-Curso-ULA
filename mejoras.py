@@ -18,12 +18,12 @@ pantalla.grid(row=0, column=0, columnspan=4, padx=5, pady=15)
 
 # Buttons
 buttons = [
-    ('%', 1, 0, 1,), ('Xª', 1, 1, 1,), ('AC', 1, 2, 1,), ('', 1, 3, 1,),
-    ('√', 2, 0, 1,), ('(', 2, 1, 1,), (')', 2, 2, 1,), ('/', 2, 3, 1,),
-    ('7', 3, 0, 1,), ('8', 3, 1, 1,), ('9', 3, 2, 1,), ('*', 3, 3, 1,),
-    ('4', 4, 0, 1,), ('5', 4, 1, 1,), ('6', 4, 2, 1,), ('-', 4, 3, 1,),
-    ('1', 5, 0, 1,), ('2', 5, 1, 1,), ('3', 5, 2, 1,), ('+', 5, 3, 1,),
-    ('0', 6, 0, 1,), ('.', 6, 1, 1,), ('=', 6, 2,2,)
+    ('%', 1, 0, 1,"w,e"), ('ª', 1, 1, 1,"w,e"), ('AC', 1, 2, 1,"w,e"), ('C', 1, 3, 1,"w,e"),
+    ('√', 2, 0, 1,"w,e"), ('(', 2, 1, 1,"w,e"), (')', 2, 2, 1,"w,e"), ('/', 2, 3, 1,"w,e"),
+    ('7', 3, 0, 1,"w,e"), ('8', 3, 1, 1,"w,e"), ('9', 3, 2, 1,"w,e"), ('*', 3, 3, 1,"w,e"),
+    ('4', 4, 0, 1,"w,e"), ('5', 4, 1, 1,"w,e"), ('6', 4, 2, 1,"w,e"), ('-', 4, 3, 1,"w,e"),
+    ('1', 5, 0, 1,"w,e"), ('2', 5, 1, 1,"w,e"), ('3', 5, 2, 1,"w,e"), ('+', 5, 3, 1,"w,e"),
+    ('0', 6, 0, 1,"w,e"), ('.', 6, 1, 1,"w,e"), ('=', 6, 2,2,"w,e")
 ]
 # Functions
 def is_valid_math_expression(expression):
@@ -52,8 +52,8 @@ def button_click(value):
     else:
         pantalla.delete(0, tk.END)
         pantalla.insert(tk.END, current + value)
-for (text, row, column,span) in buttons:
-    btn = tk.Button(calcu, text=text, font=("Consolas", 13), padx=10, pady=10,
+for (text, row, column,span,sticky) in buttons:
+    btn = tk.Button(calcu, text=text, font=("Consolas", 13), padx=10, pady=10,bd=3,
                     bg="lightblue4", fg="dodgerblue4", command=lambda t=text: button_click(t))
-    btn.grid(row=row, column=column, columnspan=span)    
+    btn.grid(row=row, column=column, columnspan=span, sticky=sticky)    
 calcu.mainloop()
