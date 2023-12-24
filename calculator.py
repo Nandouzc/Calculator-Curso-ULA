@@ -28,7 +28,7 @@ buttons = [
 # Functions
 def is_valid_math_expression(expression):
     """verificar que no sea letras"""
-    pattern = re.compile(r'^[.()-+*/0-9\s]+$')
+    pattern = re.compile(r'^[-+*/0-9).(\s]+$')
     return bool(pattern.match(expression))
 
 def button_click(value):

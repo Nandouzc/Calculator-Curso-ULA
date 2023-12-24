@@ -26,10 +26,10 @@ buttons = [
     ('0', 6, 0, 1,"w,e",1,1), ('.', 6, 1, 1,"w,e",1,1), ('=', 6, 2,2,"w,e",1,1)
 ]
 # Functions
-def is_valid_math_expression(expression):
+def is_math(expression):
     """verificar que es una operacion matemática"""
-    pattern = re.compile(r'^[.()-+*/0-9\s]+$')
-    return bool(pattern.match(expression))
+    texto = re.compile(r'^[-+*/0-9).(\s]+$')
+    return bool(texto.match(expression))
 
 def button_click(value):
     """click button"""
@@ -44,7 +44,7 @@ def button_click(value):
         pantalla.delete(0,tk.END)
         pantalla.insert(0,new_current)
     elif value == '=':
-        if is_valid_math_expression(current):
+        if is_math(current):
             try:
                 result = eval(current)
                 pantalla.delete(0, tk.END)
