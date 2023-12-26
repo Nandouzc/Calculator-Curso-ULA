@@ -13,8 +13,8 @@ calcu.iconbitmap(
 
 #Validation
 def is_valid(expression):
-    """verificar que es una operacion matemática"""
-    texto = re.compile(r'^[-+*/0-9).(error\s]+$')
+    """verificar que no sea letra"""
+    texto = re.compile(r'^[-+*/0-9).(\s]+$')
     return bool(texto.match(expression))
 def validar_entrada():
     """No permite escribir letras"""
