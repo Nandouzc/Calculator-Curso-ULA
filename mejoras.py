@@ -53,11 +53,12 @@ def button_click(value):
                 pantalla.delete(0, tk.END)
                 pantalla.insert(tk.END, " Error ")
         else:
-            pantalla.delete(0, tk.END)
-            pantalla.insert(tk.END, "No válido",)
+            if current != "":
+                pantalla.delete(0, tk.END)
+                pantalla.insert(tk.END, "No válido",)
     else:
         pantalla.delete(0, tk.END)
-        pantalla.insert(tk.END, current + value)
+        pantalla.insert(tk.END,current + value)
 
 for (text, row, column,span,sticky,px,py) in buttons:
     btn = tk.Button(calcu, text=text, font=("Consolas", 13), padx=10, pady=10,bd=3, 

@@ -1,0 +1,1 @@
+re.sub("\u00F7", "/",current)
