@@ -8,8 +8,7 @@ calcu.title("Calculadora")
 calcu.geometry("205x410+00+100")
 calcu.resizable(width=False, height=False)
 calcu.config(bg="gray25")
-calcu.iconbitmap(
-    r"D:\Users\Quetzal\Documents\Monero\Practica-Python\calcu\calculator.ico.ico")
+calcu.iconbitmap("calculator.ico.ico")
 
 # Screen
 pantalla = tk.Entry(calcu, bd=5, width=12, justify="right",
