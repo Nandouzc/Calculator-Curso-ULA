@@ -5,7 +5,7 @@ import re
 # General settings
 calcu = tk.Tk()
 calcu.title("Calculadora")
-calcu.geometry("205x410+00+100")
+calcu.geometry("205x410+100+100")
 calcu.resizable(width=False, height=False)
 calcu.config(bg="gray25")
 calcu.iconbitmap("calculator.ico.ico")
