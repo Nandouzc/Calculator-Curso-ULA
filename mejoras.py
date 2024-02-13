@@ -44,6 +44,7 @@ def replace_chars(expression):
     expression = expression.replace("÷", "/")
     expression = expression.replace("x", "*")
     expression = expression.replace("^", "**")
+    expression = expression.replace("%", "*0.01")
     return expression
 
 def is_math(expression):
@@ -91,6 +92,9 @@ def button_click(value):
                 pantalla.delete(0, tk.END)
                 pantalla.insert(tk.END, "error!",)
     else:
-        pantalla.delete(0, tk.END)
-        pantalla.insert(tk.END, current + value)
+        if current != "error!":
+            pantalla.delete(0, tk.END)
+            pantalla.insert(tk.END, current + value)
+        else:
+            pantalla.delete(0, tk.END)
 calcu.mainloop()
